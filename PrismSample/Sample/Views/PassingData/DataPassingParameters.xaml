@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="Sample.Views.DataPassingParameters"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Sample.Views"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Border Style="{StaticResource OutSideborder}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal" Grid.Row="0">
+                    <TextBlock Text="View : "/>
+                    <TextBlock Text="{Binding RelativeSource={RelativeSource AncestorType=UserControl} }"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"  Grid.Row="1">
+                    <TextBlock  Text="ViewModel : "/>
+                    <TextBlock  Text="{Binding}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"  Grid.Row="2">
+                    <TextBlock  Text="Description : "/>
+                    <TextBlock  Text="{Binding bDescription}"/>
+                </StackPanel>
+                <StackPanel Grid.Row="3" Orientation="Horizontal">
+                    <TextBlock  Text="Count Timer : "/>
+                    <TextBlock Text="{Binding bCount}"/>
+                </StackPanel>
+                <Grid Grid.Row="4">
+                    <ContentControl prism:RegionManager.RegionName="DataPassingParameters_MainRegion"/>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

@@ -1,0 +1,95 @@
+﻿<Window x:Class="Sample.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:local="clr-namespace:Sample.Views"
+        xmlns:prism="http://prismlibrary.com/"
+        xmlns:pop="clr-namespace:Sample.Modules.Views.Popup;assembly=Sample.Modules"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        mc:Ignorable="d"
+        Title="{Binding bTitle}" Height="450" Width="820">
+
+    <i:Interaction.Triggers>
+        <prism:InteractionRequestTrigger SourceObject="{Binding DefaultNotificationRequest}">
+            <prism:PopupWindowAction IsModal="True" CenterOverAssociatedObject="True" />
+        </prism:InteractionRequestTrigger>
+        <prism:InteractionRequestTrigger SourceObject="{Binding DefaultConfirmationRqeust}">
+            <prism:PopupWindowAction IsModal="True" CenterOverAssociatedObject="True" />
+        </prism:InteractionRequestTrigger>
+        <prism:InteractionRequestTrigger SourceObject="{Binding CustomPopupRequest}">
+            <prism:PopupWindowAction IsModal="True" CenterOverAssociatedObject="True">
+                <prism:PopupWindowAction.WindowContent>
+                    <pop:CustomPopup/>
+                </prism:PopupWindowAction.WindowContent>
+            </prism:PopupWindowAction>
+        </prism:InteractionRequestTrigger>
+        <prism:InteractionRequestTrigger SourceObject="{Binding CustomInteractionRequest}">
+            <prism:PopupWindowAction IsModal="True" CenterOverAssociatedObject="True">
+                <prism:PopupWindowAction.WindowContent>
+                    <pop:CustomInteraction />
+                </prism:PopupWindowAction.WindowContent>
+            </prism:PopupWindowAction>
+        </prism:InteractionRequestTrigger>
+    </i:Interaction.Triggers>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="76*"/>
+            <ColumnDefinition Width="717*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Menu Grid.Row="0" >
+                <MenuItem Header="Firstpage" Command="{Binding cNavigationCommand}" CommandParameter="FirstView"/>
+                <MenuItem Header="Binding">
+                    <MenuItem Header="Binding Basic" Command="{Binding cNavigationCommand}" CommandParameter="BindingBasicView"/>
+                    <MenuItem Header="Binding ObservableCollection" Command="{Binding cNavigationCommand}" CommandParameter="ObservableCollectionView"/>
+                </MenuItem>
+
+                <MenuItem Header="Command">
+                    <MenuItem Header="Binding Command" Command="{Binding cNavigationCommand}" CommandParameter="CommandingView"/>
+                    <MenuItem Header="Excute/CanExcute" Command="{Binding cNavigationCommand}" CommandParameter="ExcuteCanexcuteView"/>
+                    <MenuItem Header="Composite Command" Command="{Binding cNavigationCommand}" CommandParameter="CompositeCommandingView"/>
+                </MenuItem>
+
+                <MenuItem Header="Interaction">
+                    <MenuItem Header="Interactivity" Command="{Binding cNavigationCommand}" CommandParameter="interactivityView"/>
+                </MenuItem>
+
+                <MenuItem Header="Region/Views">
+                    <Separator/>
+                    <MenuItem Header="Basic" Command="{Binding cNavigationCommand}" CommandParameter="RegionViewsBasic"/>
+                    <MenuItem Header="Discovery" Command="{Binding cNavigationCommand}" CommandParameter="RegionViewDiscovery"/>
+                    <MenuItem Header="Injection" Command="{Binding cNavigationCommand}" CommandParameter="RegionViewInjection"/>
+                    <MenuItem Header="Module Discovery" Command="{Binding cNavigationCommand}" CommandParameter="RegionViewModule"/>
+                    <MenuItem Header="Region Controls" Command="{Binding cNavigationCommand}" CommandParameter="RegionControls"/>
+                    <MenuItem Header="Active/Deactive" Command="{Binding cNavigationCommand}" CommandParameter="RegionViewActiveDeactive"/>
+                    <Separator/>
+                </MenuItem>
+
+                <MenuItem Header="PassingData">
+                    <MenuItem Header="Event Aggregator" Command="{Binding cNavigationCommand}" CommandParameter="EventAggregatorShellView"/>
+                    <MenuItem Header="Event Aggregator-Filter" Command="{Binding cNavigationCommand}" CommandParameter="EAFilterShellView"/>
+                    <MenuItem Header="Data Passing Parameters" Command="{Binding cNavigationCommand}" CommandParameter="DataPassingParameters"/>
+                </MenuItem>
+
+                <MenuItem Header="Popup(interaction)">
+                    <MenuItem Header="Default Notification" Command="{Binding cPopupCommand}" CommandParameter="DefaultNotification"/>
+                    <MenuItem Header="Default Confirmation" Command="{Binding cPopupCommand}" CommandParameter="DefaultConfirmation"/>
+                    <MenuItem Header="Custom Popup" Command="{Binding cPopupCommand}" CommandParameter="CustomPopup"/>
+                    <MenuItem Header="Custom Interaction" Command="{Binding cPopupCommand}" CommandParameter="CustomInteraction"/>
+                </MenuItem>
+            </Menu>
+            <Grid Grid.Row="1">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" >
+                    <ContentControl Grid.Row="1" prism:RegionManager.RegionName="MainRegion"/>
+                </ScrollViewer>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

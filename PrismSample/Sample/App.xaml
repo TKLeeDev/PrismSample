@@ -1,0 +1,14 @@
+﻿<Application x:Class="Sample.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Sample"
+             >
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- KISSHMIModule 의 리소스 딕셔너리 참조 -->
+                <ResourceDictionary Source="/Sample.Infrastructure;component/Resources/ViewModelDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

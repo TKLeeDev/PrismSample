@@ -1,0 +1,78 @@
+﻿<UserControl x:Class="Sample.Views.RegionViewActiveDeactive"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Sample.Views"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             mc:Ignorable="d" 
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <i:Interaction.Triggers>
+            <i:EventTrigger EventName="Loaded">
+                <i:InvokeCommandAction Command="{Binding bLoaded}" />
+            </i:EventTrigger>
+        </i:Interaction.Triggers>
+
+        <Border Style="{StaticResource OutSideborder}">
+
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal" Grid.Row="0">
+                    <TextBlock Text="View : "/>
+                    <TextBlock Text="{Binding RelativeSource={RelativeSource AncestorType=UserControl} }"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"  Grid.Row="1">
+                    <TextBlock  Text="ViewModel : "/>
+                    <TextBlock  Text="{Binding}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"  Grid.Row="2">
+                    <TextBlock  Text="Description : "/>
+                    <TextBlock  Text="{Binding bDescription}"/>
+                </StackPanel>
+                <StackPanel Grid.Row="3" Orientation="Horizontal">
+                    <TextBlock  Text="Count Timer : "/>
+                    <TextBlock Text="{Binding bCount}"/>
+                </StackPanel>
+                <Grid Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel  VerticalAlignment="Bottom">
+                        <Button Content="Add→View1 " Command="{Binding bCommand}" CommandParameter="ViewActiveDeactive_Region1^Add"/>
+                        <Button Content="Add→View2 " Command="{Binding bCommand}" CommandParameter="ViewActiveDeactive_Region2^Add" />
+                       
+                        <Button Content="Active→View1 " Command="{Binding bCommand}" CommandParameter="ViewActiveDeactive_Region1^Active"/>
+                        <Button Content="Active→View2 " Command="{Binding bCommand}" CommandParameter="ViewActiveDeactive_Region2^Active" />
+                        
+                        <Button Content="Deactive→View1 " Command="{Binding bCommand}" CommandParameter="ViewActiveDeactive_Region1^Deactive"/>
+                        <Button Content="Deactive→View2 " Command="{Binding bCommand}" CommandParameter="ViewActiveDeactive_Region2^Deactive"/>
+                        
+                        <Button Content="Remove→View1 " Command="{Binding bCommand}" CommandParameter="ViewActiveDeactive_Region1^Remove"/>
+                        <Button Content="Remove>View2 " Command="{Binding bCommand}" CommandParameter="ViewActiveDeactive_Region2^Remove" />
+                    </StackPanel>
+
+                    <ContentControl Grid.Row="0" Grid.Column="1" prism:RegionManager.RegionName="ViewActiveDeactive_Region1"/>
+
+                    <ContentControl Grid.Row="1" Grid.Column="1" prism:RegionManager.RegionName="ViewActiveDeactive_Region2"/>
+
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

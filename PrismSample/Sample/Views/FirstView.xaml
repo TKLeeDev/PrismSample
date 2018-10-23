@@ -1,0 +1,125 @@
+﻿<UserControl x:Class="Sample.Views.FirstView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Sample.Views"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:pop="clr-namespace:Sample.Modules.Views.Popup;assembly=Sample.Modules"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"  >
+
+    <i:Interaction.Triggers>
+        <prism:InteractionRequestTrigger SourceObject="{Binding DefaultNotificationRequest}">
+            <prism:PopupWindowAction IsModal="True" CenterOverAssociatedObject="True" />
+        </prism:InteractionRequestTrigger>
+        <prism:InteractionRequestTrigger SourceObject="{Binding DefaultConfirmationRqeust}">
+            <prism:PopupWindowAction IsModal="True" CenterOverAssociatedObject="True" />
+        </prism:InteractionRequestTrigger>
+        <prism:InteractionRequestTrigger SourceObject="{Binding CustomPopupRequest}">
+            <prism:PopupWindowAction IsModal="True" CenterOverAssociatedObject="True">
+                <prism:PopupWindowAction.WindowContent>
+                    <pop:CustomPopup/>
+                </prism:PopupWindowAction.WindowContent>
+            </prism:PopupWindowAction>
+        </prism:InteractionRequestTrigger>
+        <prism:InteractionRequestTrigger SourceObject="{Binding CustomInteractionRequest}">
+            <prism:PopupWindowAction IsModal="True" CenterOverAssociatedObject="True">
+                <prism:PopupWindowAction.WindowContent>
+                    <pop:CustomInteraction />
+                </prism:PopupWindowAction.WindowContent>
+            </prism:PopupWindowAction>
+        </prism:InteractionRequestTrigger>
+    </i:Interaction.Triggers>
+
+
+    <Grid>
+        <Border Style="{StaticResource OutSideborder}">
+
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal" Grid.Row="0">
+                    <TextBlock Text="View : "/>
+                    <TextBlock Text="{Binding RelativeSource={RelativeSource AncestorType=UserControl} }"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"  Grid.Row="1">
+                    <TextBlock  Text="ViewModel : "/>
+                    <TextBlock  Text="{Binding}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"  Grid.Row="2">
+                    <TextBlock  Text="Description : "/>
+                    <TextBlock  Text="{Binding bDescription}" />
+                </StackPanel>
+                <StackPanel Grid.Row="3" Orientation="Horizontal">
+                    <TextBlock  Text="Count Timer : "/>
+                    <TextBlock Text="{Binding bCount}"/>
+                </StackPanel>
+                <StackPanel Grid.Row="4" Orientation="Horizontal">
+                    <StackPanel.Resources>
+                        <Style TargetType="Button">
+                            <Setter Property="Margin" Value="5"/>
+                        </Style>
+                        <Style TargetType="GroupBox">
+                            <Setter Property="Width" Value="132"/>
+                        </Style>
+                    </StackPanel.Resources>
+                    <GroupBox Header="Binding">
+                        <StackPanel>
+                            <Button Content="Basic" Command="{Binding cNavigationCommand}" CommandParameter="BindingBasic"/>
+                            <Button Content="Observable&#10;Collection" Command="{Binding cNavigationCommand}" CommandParameter="BindingObservableCollection"/>
+                        </StackPanel>
+                    </GroupBox>
+                    <GroupBox Header="Command">
+                        <StackPanel>
+                            <Button Content="Binding&#10;Command" Command="{Binding cNavigationCommand}" CommandParameter="BindingCommand"/>
+                            <Button Content="Excute/CanExcute" Command="{Binding cNavigationCommand}" CommandParameter="ExcuteCanexcute"/>
+                            <Button Content="Composite&#10;Command" Command="{Binding cNavigationCommand}" CommandParameter="BindingCompositeCommand"/>
+                        </StackPanel>
+                    </GroupBox>
+                    <GroupBox Header="Interaction">
+                        <StackPanel>
+                            <Button Content="Interactivity" Command="{Binding cNavigationCommand}" CommandParameter="Interactivity"/>
+
+                        </StackPanel>
+                    </GroupBox>
+                    <GroupBox Header="Region/Views">
+                        <StackPanel>
+                            <Button Content="Basic" Command="{Binding cNavigationCommand}" CommandParameter="RegionViewsBasic"/>
+                            <Button Content="Discovery" Command="{Binding cNavigationCommand}" CommandParameter="RegionViewDiscovery"/>
+                            <Button Content="Injection" Command="{Binding cNavigationCommand}" CommandParameter="RegionViewInjection"/>
+                            <Button Content="Module&#10;Discovery" Command="{Binding cNavigationCommand}" CommandParameter="RegionViewModule"/>
+                            <Button Content="Region&#10;Controls" Command="{Binding cNavigationCommand}" CommandParameter="RegionControls"/>
+                            <Button Content="Active/Deactive" Command="{Binding cNavigationCommand}" CommandParameter="RegionViewActiveDeactive"/>
+                        </StackPanel>
+                    </GroupBox>
+                    <GroupBox Header="Passing Data">
+                        <StackPanel>
+                            <Button Content="EventAggregator" Command="{Binding cNavigationCommand}" CommandParameter="DataEventAggregator"/>
+                            <Button Content="EventAggregator&#10; - Filter" Command="{Binding cNavigationCommand}" CommandParameter="UsingEventFilter"/>
+                            <Button Content="Data Passing&#10; Parameters" Command="{Binding cNavigationCommand}" CommandParameter="DataPassingParameters"/>
+                        </StackPanel>
+                    </GroupBox>
+                    <GroupBox Header="Popup(interaction)">
+                        <StackPanel>
+                            <Button Content="Default&#10;Notification" Command="{Binding cPopupCommand}" CommandParameter="DefaultNotification"/>
+                            <Button Content="Default&#10;Confirmation" Command="{Binding cPopupCommand}" CommandParameter="DefaultConfirmation"/>
+                            <Button Content="Custom&#10;Popup" Command="{Binding cPopupCommand}" CommandParameter="CustomPopup"/>
+                            <Button Content="Custom&#10;Interaction" Command="{Binding cPopupCommand}" CommandParameter="CustomInteraction"/>
+                        </StackPanel>
+                    </GroupBox>
+
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+
+</UserControl>
