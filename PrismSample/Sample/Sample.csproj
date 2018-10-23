@@ -91,35 +91,11 @@
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="ViewModels\FirstViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
-    <Compile Include="ViewModels\RegionViews\RegionViewDiscoveryViewModel.cs" />
-    <Compile Include="ViewModels\RegionViews\RegionViewModuleViewModel.cs" />
-    <Compile Include="ViewModels\RegionViews\RegionViewsBasicViewModel.cs" />
-    <Compile Include="ViewModels\RegionViews\RegionControlsViewModel.cs" />
-    <Compile Include="ViewModels\RegionViews\RegionViewActiveDeactiveViewModel.cs" />
-    <Compile Include="ViewModels\RegionViews\RegionViewInjectionViewModel.cs" />
     <Compile Include="Views\FirstView.xaml.cs">
       <DependentUpon>FirstView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\RegionViews\RegionViewDiscovery.xaml.cs">
-      <DependentUpon>RegionViewDiscovery.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\RegionViews\RegionViewModule.xaml.cs">
-      <DependentUpon>RegionViewModule.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\RegionViews\RegionViewsBasic.xaml.cs">
-      <DependentUpon>RegionViewsBasic.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\RegionViews\RegionControls.xaml.cs">
-      <DependentUpon>RegionControls.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\RegionViews\RegionViewActiveDeactive.xaml.cs">
-      <DependentUpon>RegionViewActiveDeactive.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\RegionViews\RegionViewInjection.xaml.cs">
-      <DependentUpon>RegionViewInjection.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -158,30 +134,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\RegionViews\RegionViewDiscovery.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\RegionViews\RegionViewModule.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\RegionViews\RegionViewsBasic.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\RegionViews\RegionControls.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\RegionViews\RegionViewActiveDeactive.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\RegionViews\RegionViewInjection.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -197,10 +149,6 @@
       <Project>{4f985fbc-5696-4809-a1c6-09f3b6c72b0d}</Project>
       <Name>Sample.Modules.Command</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Sample.Modules.Dummy\Sample.Modules.Dummy.csproj">
-      <Project>{59f65241-76e5-46d6-ba2e-c0a3384fcbd8}</Project>
-      <Name>Sample.Modules.Dummy</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Sample.Modules.Interaction\Sample.Modules.Interaction.csproj">
       <Project>{f9fd982a-6b2a-4aa8-840c-b8ba476ba135}</Project>
       <Name>Sample.Modules.Interaction</Name>
@@ -212,6 +160,10 @@
     <ProjectReference Include="..\Sample.Modules.Popup\Sample.Modules.Popup.csproj">
       <Project>{a219df0a-945b-455b-a9a6-4f203a70f1a3}</Project>
       <Name>Sample.Modules.Popup</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sample.Modules.Region\Sample.Modules.Region.csproj">
+      <Project>{f340cf4c-fdda-43c9-bec9-43d3de0106b9}</Project>
+      <Name>Sample.Modules.Region</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

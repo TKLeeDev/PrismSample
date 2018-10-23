@@ -8,12 +8,12 @@ using Sample.Modules.Binding;
 using Sample.Modules.Binding.Views;
 using Sample.Modules.Command;
 using Sample.Modules.Command.Views;
-using Sample.Modules.Dummy;
-using Sample.Modules.Dummy.Views;
+
 using Sample.Modules.Interaction;
 using Sample.Modules.Interaction.Views;
 using Sample.Modules.PassingData;
 using Sample.Modules.PassingData.Views;
+using Sample.Modules.Region;
 using Sample.Views;
 using System.ComponentModel;
 using System.Windows;
@@ -74,9 +74,6 @@ namespace Sample
             //Container.RegisterType<object, RegionViewActiveDeactive>("RegionViewActiveDeactive");
             //Container.RegisterType<object, RegionViewDiscovery>("RegionViewDiscovery");
 
-            //Dummy
-            Container.RegisterTypeForNavigation<DummyView>();
-
             //Binding
             Container.RegisterTypeForNavigation<BindingBasicView>();
             Container.RegisterTypeForNavigation<ObservableCollectionView>();
@@ -91,15 +88,6 @@ namespace Sample
 
             //Interaction
             Container.RegisterTypeForNavigation<interactivityView>();
-           
-
-            //Region/Views
-            Container.RegisterTypeForNavigation<RegionViewsBasic>();
-            Container.RegisterTypeForNavigation<RegionControls>();
-            Container.RegisterTypeForNavigation<RegionViewInjection>();
-            Container.RegisterTypeForNavigation<RegionViewActiveDeactive>();
-            Container.RegisterTypeForNavigation<RegionViewDiscovery>();
-            Container.RegisterTypeForNavigation<RegionViewModule>();
 
             //passing data. ok
             Container.RegisterTypeForNavigation<EventAggregatorShellView>();
@@ -127,7 +115,8 @@ namespace Sample
             //interaction
             catalog.AddModule(typeof(InteractionModule));
 
-            catalog.AddModule(typeof(DummyModule));
+            //View(region)
+            catalog.AddModule(typeof(RegionModule));
         }
     }
 }

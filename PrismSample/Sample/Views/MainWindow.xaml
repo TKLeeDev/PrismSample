@@ -63,12 +63,11 @@
 
                 <MenuItem Header="Region/Views">
                     <Separator/>
-                    <MenuItem Header="Basic" Command="{Binding cNavigationCommand}" CommandParameter="RegionViewsBasic"/>
-                    <MenuItem Header="Discovery" Command="{Binding cNavigationCommand}" CommandParameter="RegionViewDiscovery"/>
-                    <MenuItem Header="Injection" Command="{Binding cNavigationCommand}" CommandParameter="RegionViewInjection"/>
-                    <MenuItem Header="Module Discovery" Command="{Binding cNavigationCommand}" CommandParameter="RegionViewModule"/>
-                    <MenuItem Header="Region Controls" Command="{Binding cNavigationCommand}" CommandParameter="RegionControls"/>
-                    <MenuItem Header="Active/Deactive" Command="{Binding cNavigationCommand}" CommandParameter="RegionViewActiveDeactive"/>
+                    <MenuItem Header="Basic" Command="{Binding cNavigationCommand}" CommandParameter="ViewBasicView"/>
+                    <MenuItem Header="Discovery" Command="{Binding cNavigationCommand}" CommandParameter="ViewDiscoveryView"/>
+                    <MenuItem Header="Injection" Command="{Binding cNavigationCommand}" CommandParameter="ViewInjectionView"/>
+                    <MenuItem Header="Region Controls" Command="{Binding cNavigationCommand}" CommandParameter="ViewControlView"/>
+                    <MenuItem Header="Active/Deactive" Command="{Binding cNavigationCommand}" CommandParameter="ViewActiveDeactiveView"/>
                     <Separator/>
                 </MenuItem>
 
