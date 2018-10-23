@@ -1,6 +1,7 @@
 ﻿using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Regions;
+using Sample.Modules.Dummy.Views;
 using Sample.Views;
 using System;
 using System.Collections.Generic;

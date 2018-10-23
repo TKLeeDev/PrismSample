@@ -1,8 +1,9 @@
-﻿using Sample.Modules.Views;
-using Sample.Modules.Views._Dummy;
+﻿
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Regions;
+using Sample.Modules.Dummy.Views;
+using Sample.Views;
 using System;
 using System.Windows.Threading;
 
@@ -25,7 +26,7 @@ namespace Sample.ViewModels
 
         void ExecutebCommand(string regionName)
         {
-            _regionManager.RegisterViewWithRegion(regionName, typeof(DummyModuleView));
+            _regionManager.RegisterViewWithRegion(regionName, typeof(DummyView));
         }
 
         #region Default UI

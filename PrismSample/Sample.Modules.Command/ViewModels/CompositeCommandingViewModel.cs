@@ -37,7 +37,7 @@ namespace Sample.Modules.Command.ViewModels
 
         void RaiseSome()
         {  //Description Image
-            PopupRequest.Raise(new Notification { Title = "Description Images", Content = "/Sample.Core;component/Images/Ch6AdvMVVMFig1.png" }, null);
+            PopupRequest.Raise(new Notification { Title = "Description Images", Content = "/Sample.Infrastructure;component/Images/Ch6AdvMVVMFig1.png" }, null);
         }
 
         #region Default UI

@@ -25,7 +25,7 @@ namespace Sample.Modules
             // _container.RegisterTypeForNavigation<DataPassingParameters_Dummy>();
             //_regionManger.RegisterViewWithRegion("DataPassingParameters_MainRegion", typeof(DataPassingParameters_PersonList));
             //_container.RegisterTypeForNavigation<DataPassingParameters_PersonDetail>();
-            _container.RegisterTypeForNavigation<ImagePopUp>();
+        //    _container.RegisterTypeForNavigation<ImagePopUp>();
         
         }
     }

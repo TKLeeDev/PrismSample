@@ -6,7 +6,7 @@
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:local="clr-namespace:Sample.Views"
         xmlns:prism="http://prismlibrary.com/"
-        xmlns:pop="clr-namespace:Sample.Modules.Views.Popup;assembly=Sample.Modules"
+        xmlns:pop="clr-namespace:Sample.Modules.Popup.Views;assembly=Sample.Modules.Popup"
         prism:ViewModelLocator.AutoWireViewModel="True"
         mc:Ignorable="d"
         Title="{Binding bTitle}" Height="450" Width="820">
@@ -21,14 +21,14 @@
         <prism:InteractionRequestTrigger SourceObject="{Binding CustomPopupRequest}">
             <prism:PopupWindowAction IsModal="True" CenterOverAssociatedObject="True">
                 <prism:PopupWindowAction.WindowContent>
-                    <pop:CustomPopup/>
+                    <pop:CustomView/>
                 </prism:PopupWindowAction.WindowContent>
             </prism:PopupWindowAction>
         </prism:InteractionRequestTrigger>
         <prism:InteractionRequestTrigger SourceObject="{Binding CustomInteractionRequest}">
             <prism:PopupWindowAction IsModal="True" CenterOverAssociatedObject="True">
                 <prism:PopupWindowAction.WindowContent>
-                    <pop:CustomInteraction />
+                    <pop:CustomInteractionView />
                 </prism:PopupWindowAction.WindowContent>
             </prism:PopupWindowAction>
         </prism:InteractionRequestTrigger>

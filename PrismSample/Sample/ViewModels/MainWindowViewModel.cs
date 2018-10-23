@@ -1,10 +1,11 @@
-﻿using Sample.Modules.Models;
+﻿
 using Prism.Commands;
 using Prism.Events;
 using Prism.Interactivity.InteractionRequest;
 using Prism.Mvvm;
 using Prism.Regions;
 using Sample.Infrastructure.Messages;
+using Sample.Modules.Popup.Models;
 
 namespace Sample.ViewModels
 {

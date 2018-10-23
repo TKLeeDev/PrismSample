@@ -88,11 +88,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="AutoScrollBehavior.cs" />
     <Compile Include="Bootstrapper.cs" />
-    <Compile Include="ViewModels\Interaction\UsingEventFilterViewModel.cs" />
-    <Compile Include="ViewModels\_Dummy\DummyViewModel.cs" />
-    <Compile Include="ViewModels\PassingData\DataPassingParametersViewModel.cs" />
     <Compile Include="ViewModels\FirstViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\RegionViews\RegionViewDiscoveryViewModel.cs" />
@@ -101,12 +97,6 @@
     <Compile Include="ViewModels\RegionViews\RegionControlsViewModel.cs" />
     <Compile Include="ViewModels\RegionViews\RegionViewActiveDeactiveViewModel.cs" />
     <Compile Include="ViewModels\RegionViews\RegionViewInjectionViewModel.cs" />
-    <Compile Include="Views\PassingData\UsingEventFilter.xaml.cs">
-      <DependentUpon>UsingEventFilter.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\_Dummy\DummyView.xaml.cs">
-      <DependentUpon>DummyView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\FirstView.xaml.cs">
       <DependentUpon>FirstView.xaml</DependentUpon>
     </Compile>
@@ -160,14 +150,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Views\PassingData\UsingEventFilter.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\_Dummy\DummyView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\FirstView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -215,6 +197,10 @@
       <Project>{4f985fbc-5696-4809-a1c6-09f3b6c72b0d}</Project>
       <Name>Sample.Modules.Command</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Sample.Modules.Dummy\Sample.Modules.Dummy.csproj">
+      <Project>{59f65241-76e5-46d6-ba2e-c0a3384fcbd8}</Project>
+      <Name>Sample.Modules.Dummy</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Sample.Modules.Interaction\Sample.Modules.Interaction.csproj">
       <Project>{f9fd982a-6b2a-4aa8-840c-b8ba476ba135}</Project>
       <Name>Sample.Modules.Interaction</Name>
@@ -223,9 +209,9 @@
       <Project>{9d104759-8f1b-48ac-827c-393d393c748e}</Project>
       <Name>Sample.Modules.PassingData</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Sample.Modules\Sample.Modules.csproj">
-      <Project>{070a9c6e-5477-4e83-8d2b-8cddd6031227}</Project>
-      <Name>Sample.Modules</Name>
+    <ProjectReference Include="..\Sample.Modules.Popup\Sample.Modules.Popup.csproj">
+      <Project>{a219df0a-945b-455b-a9a6-4f203a70f1a3}</Project>
+      <Name>Sample.Modules.Popup</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

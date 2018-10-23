@@ -8,13 +8,14 @@ using Sample.Modules.Binding;
 using Sample.Modules.Binding.Views;
 using Sample.Modules.Command;
 using Sample.Modules.Command.Views;
+using Sample.Modules.Dummy;
+using Sample.Modules.Dummy.Views;
 using Sample.Modules.Interaction;
 using Sample.Modules.Interaction.Views;
 using Sample.Modules.PassingData;
 using Sample.Modules.PassingData.Views;
-using Sample.Modules.Views;
 using Sample.Views;
-using Sample.Views.Interaction;
+using System.ComponentModel;
 using System.Windows;
 
 namespace Sample
@@ -73,6 +74,9 @@ namespace Sample
             //Container.RegisterType<object, RegionViewActiveDeactive>("RegionViewActiveDeactive");
             //Container.RegisterType<object, RegionViewDiscovery>("RegionViewDiscovery");
 
+            //Dummy
+            Container.RegisterTypeForNavigation<DummyView>();
+
             //Binding
             Container.RegisterTypeForNavigation<BindingBasicView>();
             Container.RegisterTypeForNavigation<ObservableCollectionView>();
@@ -111,8 +115,6 @@ namespace Sample
             //Add other project module
             var catalog = (ModuleCatalog)ModuleCatalog;
 
-            catalog.AddModule(typeof(SampleModules));
-
             //binding
             catalog.AddModule(typeof(BindingModule));
 
@@ -124,6 +126,8 @@ namespace Sample
 
             //interaction
             catalog.AddModule(typeof(InteractionModule));
+
+            catalog.AddModule(typeof(DummyModule));
         }
     }
 }

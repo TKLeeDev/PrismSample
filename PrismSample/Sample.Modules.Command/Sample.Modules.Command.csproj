@@ -75,6 +75,7 @@
     <Compile Include="ViewModels\CompositeCommandingViewModel.cs" />
     <Compile Include="ViewModels\CompositeCommandingDummyViewModel.cs" />
     <Compile Include="ViewModels\CompositeCommanding_ImagePopupViewModel.cs" />
+    <Compile Include="ViewModels\DescriptionCompositeCommadPopupViewmodel.cs" />
     <Compile Include="ViewModels\ExcuteCanexcuteViewModel.cs" />
     <Compile Include="Views\CommandingView.xaml.cs">
       <DependentUpon>CommandingView.xaml</DependentUpon>
@@ -87,6 +88,9 @@
     </Compile>
     <Compile Include="Views\CompositeCommanding_ImagePopupView.xaml.cs">
       <DependentUpon>CompositeCommanding_ImagePopupView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DescriptionCompositeCommadPopupView.xaml.cs">
+      <DependentUpon>DescriptionCompositeCommadPopupView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ExcuteCanexcuteView.xaml.cs">
       <DependentUpon>ExcuteCanexcuteView.xaml</DependentUpon>
@@ -109,6 +113,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CompositeCommanding_ImagePopupView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DescriptionCompositeCommadPopupView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

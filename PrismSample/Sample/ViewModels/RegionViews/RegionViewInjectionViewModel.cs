@@ -1,15 +1,10 @@
-﻿using Sample.Modules.Views;
-using Microsoft.Practices.ServiceLocation;
-using Microsoft.Practices.Unity;
+﻿using Microsoft.Practices.Unity;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Regions;
+using Sample.Modules.Dummy.Views;
 using Sample.Views;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Threading;
 
 namespace Sample.ViewModels
@@ -48,9 +43,6 @@ namespace Sample.ViewModels
             IRegion region = _regionManager.Regions["ViewInjectionMain_MainRegion"];
             region.Add(view);
         }
-
-
-
 
         #region Default UI
         DispatcherTimer dispatcherTimer;

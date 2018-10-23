@@ -1,9 +1,9 @@
-﻿using Sample.Modules.Views;
-using Sample.Modules.Views._Dummy;
+﻿
 using Microsoft.Practices.Unity;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Regions;
+using Sample.Modules.Dummy.Views;
 using Sample.Views;
 using System;
 using System.Windows;
@@ -21,8 +21,8 @@ namespace Sample.ViewModels
         IRegion _region2;
 
 
-        DummyModuleView dmv1;
-        DummyModuleView dmv2;
+        DummyView dmv1;
+        DummyView dmv2;
 
         public RegionViewActiveDeactiveViewModel(IUnityContainer containter, IRegionManager regionManager)
         {
@@ -38,8 +38,8 @@ namespace Sample.ViewModels
         void ExecutebLoaded()
         {
             
-            dmv1 = _container.Resolve<DummyModuleView>();
-            dmv2 = _container.Resolve<DummyModuleView>();
+            dmv1 = _container.Resolve<DummyView>();
+            dmv2 = _container.Resolve<DummyView>();
 
             ////addName
             //dv1.Name = "a123";
