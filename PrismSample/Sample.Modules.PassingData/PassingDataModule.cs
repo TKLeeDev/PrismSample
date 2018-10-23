@@ -33,6 +33,11 @@ namespace Sample.Modules.PassingData
             _regionManager.RegisterViewWithRegion("UsingEventFilter_Right", typeof(EAFilterSubscribeView));
             _container.RegisterTypeForNavigation<EAFilterShellView>();
 
+
+            _regionManager.RegisterViewWithRegion("DataPassingParameters_MainRegion", typeof(PassingParametersListView));
+            _container.RegisterTypeForNavigation<PassingParametersDetailView>();
+            _container.RegisterTypeForNavigation<PassingParametersShellView>();
+
         }
     }
 }

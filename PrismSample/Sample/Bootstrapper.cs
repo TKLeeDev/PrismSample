@@ -100,8 +100,7 @@ namespace Sample
             //passing data. ok
             Container.RegisterTypeForNavigation<EventAggregatorShellView>();
             Container.RegisterTypeForNavigation<EAFilterShellView>();
-            //? 미작업
-            Container.RegisterTypeForNavigation<DataPassingParameters>();
+            Container.RegisterTypeForNavigation<PassingParametersShellView>();
 
             //MainWindow Show
             Application.Current.MainWindow.Show();

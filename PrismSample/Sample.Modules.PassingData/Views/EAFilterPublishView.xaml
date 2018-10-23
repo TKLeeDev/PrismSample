@@ -34,29 +34,36 @@
                     <TextBlock  Text="Count Timer : "/>
                     <TextBlock Text="{Binding bCount}"/>
                 </StackPanel>
-                <Grid Grid.Row="4">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
+                <StackPanel Grid.Row="4" VerticalAlignment="Center">
 
-                    <!-- First Name -->
-                    <TextBlock Text="First Name:" Margin="5" />
-                    <TextBlock Grid.Column="1" Margin="5" Text="{Binding SelectedPerson.FirstName}" />
-
-                    <!-- Last Name -->
-                    <TextBlock Grid.Row="1" Text="Last Name:" Margin="5" />
-                    <TextBlock Grid.Row="1" Grid.Column="1"  Margin="5" Text="{Binding SelectedPerson.LastName}" />
-
-                    <!-- Age -->
-                    <TextBlock Grid.Row="2" Text="Age:" Margin="5"/>
-                    <TextBlock Grid.Row="2" Grid.Column="1"  Margin="5" Text="{Binding SelectedPerson.Age}"/>
-                </Grid>
+                    <StackPanel Margin="0 0 5 0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBox Width="100" Text="{Binding bMessage}">
+                            <TextBox.Style>
+                                <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                                    <Style.Resources>
+                                        <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                                            <VisualBrush.Visual>
+                                                <Label Content="TaeKyung123" Foreground="LightGray" />
+                                            </VisualBrush.Visual>
+                                        </VisualBrush>
+                                    </Style.Resources>
+                                    <Style.Triggers>
+                                        <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                                            <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                                        </Trigger>
+                                        <Trigger Property="Text" Value="{x:Null}">
+                                            <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                                        </Trigger>
+                                        <Trigger Property="IsKeyboardFocused" Value="True">
+                                            <Setter Property="Background" Value="White" />
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBox.Style>
+                        </TextBox>
+                        <Button Content="Send" Command="{Binding cSend}"/>
+                    </StackPanel>
+                </StackPanel>
             </Grid>
         </Border>
     </Grid>

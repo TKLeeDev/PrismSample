@@ -75,7 +75,7 @@
                 <MenuItem Header="PassingData">
                     <MenuItem Header="Event Aggregator" Command="{Binding cNavigationCommand}" CommandParameter="EventAggregatorShellView"/>
                     <MenuItem Header="Event Aggregator-Filter" Command="{Binding cNavigationCommand}" CommandParameter="EAFilterShellView"/>
-                    <MenuItem Header="Data Passing Parameters" Command="{Binding cNavigationCommand}" CommandParameter="DataPassingParameters"/>
+                    <MenuItem Header="Data Passing Parameters" Command="{Binding cNavigationCommand}" CommandParameter="PassingParametersShellView"/>
                 </MenuItem>
 
                 <MenuItem Header="Popup(interaction)">

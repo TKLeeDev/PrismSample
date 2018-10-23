@@ -104,9 +104,6 @@
     <Compile Include="Views\PassingData\UsingEventFilter.xaml.cs">
       <DependentUpon>UsingEventFilter.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\PassingData\DataPassingParameters.xaml.cs">
-      <DependentUpon>DataPassingParameters.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\_Dummy\DummyView.xaml.cs">
       <DependentUpon>DummyView.xaml</DependentUpon>
     </Compile>
@@ -164,10 +161,6 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Views\PassingData\UsingEventFilter.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\PassingData\DataPassingParameters.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
