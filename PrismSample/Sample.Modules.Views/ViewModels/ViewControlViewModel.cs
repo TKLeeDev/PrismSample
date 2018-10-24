@@ -96,8 +96,6 @@ namespace Sample.Modules.Region.ViewModels
             _bFindDelete ?? (_bFindDelete = new DelegateCommand<string>(ExecutebFindDeleteCommand));
         void ExecutebFindDeleteCommand(string param)
         {
-            //? Exception
-
             object theView = null;
             if (bTextBox == null)
             {
