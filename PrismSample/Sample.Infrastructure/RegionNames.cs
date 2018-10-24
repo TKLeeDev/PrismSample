@@ -26,9 +26,25 @@ namespace Sample.Infrastructure
         public const string Region_ViewControl_LeftBottom = "Region_ViewControl_LeftBottom";
         public const string Region_ViewControl_RightItems = "Region_ViewControl_RightItems";
 
+        public const string RegionParam_ViewControl_LeftTop = "Region_ViewControl_LeftTop^DummyView";
+        public const string RegionParam_ViewControl_LeftBottom = "Region_ViewControl_LeftBottom^DummyView";
+        public const string RegionParam_ViewControl_RightItems = "Region_ViewControl_RightItems^DummyView";
+
         //ViewActiveDeactiveView
         public const string Region_ViewActiveDeactive_Top = "Region_ViewActiveDeactive_Top";
         public const string Region_ViewActiveDeactive_Bottom = "Region_ViewActiveDeactive_Bottom";
+
+        public const string RegionParam_ViewActiveDAeactive_TopAdd = "Region_ViewActiveDeactive_Top^Add";
+        public const string RegionParam_ViewActiveDeactive_BottomAdd = "Region_ViewActiveDeactive_Bottom^Add";
+
+        public const string RegionParam_ViewActiveDeactive_TopActive = "Region_ViewActiveDeactive_Top^Active";
+        public const string RegionParam_ViewActiveDeactive_BottomActive = "Region_ViewActiveDeactive_Bottom^Active";
+
+        public const string RegionParam_ViewActiveDeactive_TopDeactive = "Region_ViewActiveDeactive_Top^Deactive";
+        public const string RegionParam_ViewActiveDeactive_BottomDeactive = "Region_ViewActiveDeactive_Bottom^Deactive";
+
+        public const string RegionParam_ViewActiveDeactive_TopRemove = "Region_ViewActiveDeactive_Top^Remove";
+        public const string RegionParam_ViewActiveDeactive_BottomRemove = "Region_ViewActiveDeactive_Bottom^Remove";
 
         //EventAggregatorShellView
         public const string Region_EventAggregatorShell_Left = "Region_EventAggregatorShell_Left";

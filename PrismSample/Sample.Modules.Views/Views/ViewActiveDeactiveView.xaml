@@ -55,17 +55,17 @@
                     </Grid.RowDefinitions>
 
                     <StackPanel  VerticalAlignment="Bottom">
-                        <Button Content="Add→View1 " Command="{Binding bCommand}" CommandParameter="Region_ViewActiveDeactive_Top^Add"/>
-                        <Button Content="Add→View2 " Command="{Binding bCommand}" CommandParameter="Region_ViewActiveDeactive_Bottom^Add" />
+                        <Button Content="Add→View1 " Command="{Binding bCommand}" CommandParameter="{x:Static inf:RegionNames.RegionParam_ViewActiveDAeactive_TopAdd}"/>
+                        <Button Content="Add→View2 " Command="{Binding bCommand}"  CommandParameter="{x:Static inf:RegionNames.RegionParam_ViewActiveDeactive_BottomAdd}"/>
 
-                        <Button Content="Active→View1 " Command="{Binding bCommand}" CommandParameter="Region_ViewActiveDeactive_Top^Active"/>
-                        <Button Content="Active→View2 " Command="{Binding bCommand}" CommandParameter="Region_ViewActiveDeactive_Bottom^Active" />
+                        <Button Content="Active→View1 " Command="{Binding bCommand}" CommandParameter="{x:Static inf:RegionNames.RegionParam_ViewActiveDeactive_TopActive}"/>
+                        <Button Content="Active→View2 " Command="{Binding bCommand}" CommandParameter="{x:Static inf:RegionNames.RegionParam_ViewActiveDeactive_BottomActive}"/>
 
-                        <Button Content="Deactive→View1 " Command="{Binding bCommand}" CommandParameter="Region_ViewActiveDeactive_Top^Deactive"/>
-                        <Button Content="Deactive→View2 " Command="{Binding bCommand}" CommandParameter="Region_ViewActiveDeactive_Bottom^Deactive"/>
+                        <Button Content="Deactive→View1 " Command="{Binding bCommand}" CommandParameter="{x:Static inf:RegionNames.RegionParam_ViewActiveDeactive_TopDeactive}"/>
+                        <Button Content="Deactive→View2 " Command="{Binding bCommand}" CommandParameter="{x:Static inf:RegionNames.RegionParam_ViewActiveDeactive_BottomDeactive}"/>
 
-                        <Button Content="Remove→View1 " Command="{Binding bCommand}" CommandParameter="Region_ViewActiveDeactive_Top^Remove"/>
-                        <Button Content="Remove>View2 " Command="{Binding bCommand}" CommandParameter="Region_ViewActiveDeactive_Bottom^Remove" />
+                        <Button Content="Remove→View1 " Command="{Binding bCommand}" CommandParameter="{x:Static inf:RegionNames.RegionParam_ViewActiveDeactive_TopRemove}"/>
+                        <Button Content="Remove>View2 " Command="{Binding bCommand}" CommandParameter="{x:Static inf:RegionNames.RegionParam_ViewActiveDeactive_BottomRemove}"/>
                     </StackPanel>
 
                     <ContentControl Grid.Row="0" Grid.Column="1" prism:RegionManager.RegionName="{x:Static inf:RegionNames.Region_ViewActiveDeactive_Top}"/>
