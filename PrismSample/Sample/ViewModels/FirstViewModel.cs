@@ -90,9 +90,7 @@ namespace Sample.ViewModels
 
         #region Default UI
         DispatcherTimer dispatcherTimer;
-        private string _bDescription = "//bootstrapper.cs에서 \n" +
-            " regionManager.RegisterViewWithRegion(\"MainRegion\", typeof(FirstView));\n" +
-            "//프로그램 실행과 동시에 호출됨 자세한 내용은 region/view메뉴 참조";
+        private string _bDescription = "This sample allows introductory users to use Prism intuitively.";
         public string bDescription
         {
             get { return _bDescription; }
