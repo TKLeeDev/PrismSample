@@ -39,6 +39,7 @@ namespace Sample.Infrastructure
         public const string Region_EAFilterShell_Right = "Region_EAFilterShell_Right";
 
         //PassingParametersShellView
-        public const string Region_PassingParameters = "Region_EAFilterShell";
+        public const string Region_PassingParametersShell = "Region_PassingParametersShell";
+        public const string Region_PassingParametersList = "Region_Region_PassingParametersList_Tab";
     }
 }

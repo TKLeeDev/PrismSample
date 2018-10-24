@@ -4,6 +4,7 @@ using Prism.Events;
 using Prism.Interactivity.InteractionRequest;
 using Prism.Mvvm;
 using Prism.Regions;
+using Sample.Infrastructure;
 using Sample.Infrastructure.Messages;
 using Sample.Modules.Popup.Models;
 using System;
@@ -38,7 +39,7 @@ namespace Sample.ViewModels
         void NavigationCommandFunc(string param)
         {
             // - Any "Region" is accessible via "IRegionManager"
-            _regionManager.RequestNavigate("MainWindow_Region", param);
+            _regionManager.RequestNavigate(RegionNames.Region_MainWindow, param);
         }
 
         #region Popup

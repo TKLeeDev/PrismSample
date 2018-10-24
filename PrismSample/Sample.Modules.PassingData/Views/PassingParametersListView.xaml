@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:inf="clr-namespace:Sample.Infrastructure;assembly=Sample.Infrastructure"
              xmlns:local="clr-namespace:Sample.Modules.PassingData.Views"
              mc:Ignorable="d" 
                xmlns:prism="http://prismlibrary.com/"
@@ -58,7 +59,7 @@
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </ListBox>
-                    <TabControl Grid.Row="1"  prism:RegionManager.RegionName="DataPassingParameters_PersonList_TabRegion"/>
+                    <TabControl Grid.Row="1"  prism:RegionManager.RegionName="{x:Static inf:RegionNames.Region_PassingParametersList}"/>
                 </Grid>
             </Grid>
         </Border>

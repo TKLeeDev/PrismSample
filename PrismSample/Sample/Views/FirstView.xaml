@@ -5,13 +5,13 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Sample.Views"
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
-            
+            xmlns:pop="clr-namespace:Sample.Modules.Popup.Views;assembly=Sample.Modules.Popup"
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"  >
 
-    <!--<i:Interaction.Triggers>
+    <i:Interaction.Triggers>
         <prism:InteractionRequestTrigger SourceObject="{Binding DefaultNotificationRequest}">
             <prism:PopupWindowAction IsModal="True" CenterOverAssociatedObject="True" />
         </prism:InteractionRequestTrigger>
@@ -21,18 +21,18 @@
         <prism:InteractionRequestTrigger SourceObject="{Binding CustomPopupRequest}">
             <prism:PopupWindowAction IsModal="True" CenterOverAssociatedObject="True">
                 <prism:PopupWindowAction.WindowContent>
-                    <pop:CustomPopup/>
+                    <pop:CustomView/>
                 </prism:PopupWindowAction.WindowContent>
             </prism:PopupWindowAction>
         </prism:InteractionRequestTrigger>
         <prism:InteractionRequestTrigger SourceObject="{Binding CustomInteractionRequest}">
             <prism:PopupWindowAction IsModal="True" CenterOverAssociatedObject="True">
                 <prism:PopupWindowAction.WindowContent>
-                    <pop:CustomInteraction />
+                    <pop:CustomInteractionView />
                 </prism:PopupWindowAction.WindowContent>
             </prism:PopupWindowAction>
         </prism:InteractionRequestTrigger>
-    </i:Interaction.Triggers>-->
+    </i:Interaction.Triggers>
 
 
     <Grid>
@@ -74,38 +74,37 @@
                     </StackPanel.Resources>
                     <GroupBox Header="Binding">
                         <StackPanel>
-                            <Button Content="Basic" Command="{Binding cNavigationCommand}" CommandParameter="BindingBasic"/>
-                            <Button Content="Observable&#10;Collection" Command="{Binding cNavigationCommand}" CommandParameter="BindingObservableCollection"/>
+                            <Button Content="Basic" Command="{Binding cNavigationCommand}" CommandParameter="BindingBasicView"/>
+                            <Button Content="Observable&#10;Collection" Command="{Binding cNavigationCommand}" CommandParameter="ObservableCollectionView"/>
                         </StackPanel>
                     </GroupBox>
                     <GroupBox Header="Command">
                         <StackPanel>
-                            <Button Content="Binding&#10;Command" Command="{Binding cNavigationCommand}" CommandParameter="BindingCommand"/>
-                            <Button Content="Excute/CanExcute" Command="{Binding cNavigationCommand}" CommandParameter="ExcuteCanexcute"/>
-                            <Button Content="Composite&#10;Command" Command="{Binding cNavigationCommand}" CommandParameter="BindingCompositeCommand"/>
+                            <Button Content="Binding&#10;Command" Command="{Binding cNavigationCommand}" CommandParameter="CommandingView"/>
+                            <Button Content="Excute/CanExcute" Command="{Binding cNavigationCommand}" CommandParameter="ExcuteCanexcuteView"/>
+                            <Button Content="Composite&#10;Command" Command="{Binding cNavigationCommand}" CommandParameter="CompositeCommandingView"/>
                         </StackPanel>
                     </GroupBox>
                     <GroupBox Header="Interaction">
                         <StackPanel>
-                            <Button Content="Interactivity" Command="{Binding cNavigationCommand}" CommandParameter="Interactivity"/>
+                            <Button Content="Interactivity" Command="{Binding cNavigationCommand}" CommandParameter="interactivityView"/>
 
                         </StackPanel>
                     </GroupBox>
                     <GroupBox Header="Region/Views">
                         <StackPanel>
-                            <Button Content="Basic" Command="{Binding cNavigationCommand}" CommandParameter="RegionViewsBasic"/>
-                            <Button Content="Discovery" Command="{Binding cNavigationCommand}" CommandParameter="RegionViewDiscovery"/>
-                            <Button Content="Injection" Command="{Binding cNavigationCommand}" CommandParameter="RegionViewInjection"/>
-                            <Button Content="Module&#10;Discovery" Command="{Binding cNavigationCommand}" CommandParameter="RegionViewModule"/>
-                            <Button Content="Region&#10;Controls" Command="{Binding cNavigationCommand}" CommandParameter="RegionControls"/>
-                            <Button Content="Active/Deactive" Command="{Binding cNavigationCommand}" CommandParameter="RegionViewActiveDeactive"/>
+                            <Button Content="Basic" Command="{Binding cNavigationCommand}" CommandParameter="ViewBasicView"/>
+                            <Button Content="Discovery" Command="{Binding cNavigationCommand}" CommandParameter="ViewDiscoveryView"/>
+                            <Button Content="Injection" Command="{Binding cNavigationCommand}" CommandParameter="ViewInjectionView"/>
+                            <Button Content="Region&#10;Controls" Command="{Binding cNavigationCommand}" CommandParameter="ViewControlView"/>
+                            <Button Content="Active/Deactive" Command="{Binding cNavigationCommand}" CommandParameter="ViewActiveDeactiveView"/>
                         </StackPanel>
                     </GroupBox>
                     <GroupBox Header="Passing Data">
                         <StackPanel>
-                            <Button Content="EventAggregator" Command="{Binding cNavigationCommand}" CommandParameter="DataEventAggregator"/>
-                            <Button Content="EventAggregator&#10; - Filter" Command="{Binding cNavigationCommand}" CommandParameter="UsingEventFilter"/>
-                            <Button Content="Data Passing&#10; Parameters" Command="{Binding cNavigationCommand}" CommandParameter="DataPassingParameters"/>
+                            <Button Content="EventAggregator" Command="{Binding cNavigationCommand}" CommandParameter="EventAggregatorShellView"/>
+                            <Button Content="EventAggregator&#10; - Filter" Command="{Binding cNavigationCommand}" CommandParameter="EAFilterShellView"/>
+                            <Button Content="Data Passing&#10; Parameters" Command="{Binding cNavigationCommand}" CommandParameter="PassingParametersShellView"/>
                         </StackPanel>
                     </GroupBox>
                     <GroupBox Header="Popup(interaction)">

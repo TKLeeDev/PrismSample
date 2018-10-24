@@ -1,6 +1,7 @@
 ﻿using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Regions;
+using Sample.Infrastructure;
 using Sample.Modules.PassingData.Models;
 using System;
 using System.Collections.Generic;
@@ -42,7 +43,7 @@ namespace Sample.Modules.PassingData.ViewModels
 
             if (person != null)
                 //RequestNavigation with NavigationParameters object.
-                _regionManager.RequestNavigate("DataPassingParameters_PersonList_TabRegion", "PassingParametersDetailView", parameters);
+                _regionManager.RequestNavigate(RegionNames.Region_PassingParametersList, "PassingParametersDetailView", parameters);
         }
 
         private void CreatePeople()

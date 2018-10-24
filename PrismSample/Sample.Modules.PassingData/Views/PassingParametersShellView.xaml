@@ -36,7 +36,7 @@
                     <TextBlock Text="{Binding bCount}"/>
                 </StackPanel>
                 <Grid Grid.Row="4">
-                    <ContentControl prism:RegionManager.RegionName="{x:Static inf:RegionNames.Region_PassingParameters}"/>
+                    <ContentControl prism:RegionManager.RegionName="{x:Static inf:RegionNames.Region_PassingParametersShell}"/>
                 </Grid>
             </Grid>
         </Border>

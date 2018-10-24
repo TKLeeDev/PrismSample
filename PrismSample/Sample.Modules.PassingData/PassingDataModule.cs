@@ -35,7 +35,7 @@ namespace Sample.Modules.PassingData
             _container.RegisterTypeForNavigation<EAFilterShellView>();
 
 
-            _regionManager.RegisterViewWithRegion(RegionNames.Region_PassingParameters, typeof(PassingParametersListView));
+            _regionManager.RegisterViewWithRegion(RegionNames.Region_PassingParametersShell, typeof(PassingParametersListView));
             _container.RegisterTypeForNavigation<PassingParametersDetailView>();
             _container.RegisterTypeForNavigation<PassingParametersShellView>();
 
