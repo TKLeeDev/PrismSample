@@ -38,7 +38,7 @@ namespace Sample.ViewModels
         void NavigationCommandFunc(string param)
         {
             // - Any "Region" is accessible via "IRegionManager"
-            _regionManager.RequestNavigate("MainRegion", param);
+            _regionManager.RequestNavigate("MainWindow_Region", param);
         }
 
         #region Popup

@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Sample.Modules.Command.Views"
              mc:Ignorable="d" 
+             xmlns:inf="clr-namespace:Sample.Infrastructure;assembly=Sample.Infrastructure"
               xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
                xmlns:prism="http://prismlibrary.com/"
               prism:ViewModelLocator.AutoWireViewModel="True"            
@@ -57,8 +58,8 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <Button IsEnabled="True" Content="Occure Composite Command" Grid.ColumnSpan="2" Command="{Binding DummyCompositeCommands.command1 }"/>
-                    <ContentControl Grid.Row="1" Grid.Column="0" prism:RegionManager.RegionName="BindingCompositeCommand_LeftRegion"/>
-                    <ContentControl Grid.Row="1" Grid.Column="1" prism:RegionManager.RegionName="BindingCompositeCommand_RightRegion"/>
+                    <ContentControl Grid.Row="1" Grid.Column="0" prism:RegionManager.RegionName="{x:Static inf:RegionNames.Region_CompositeCommanding_Left}"/>
+                    <ContentControl Grid.Row="1" Grid.Column="1" prism:RegionManager.RegionName="{x:Static inf:RegionNames.Region_CompositeCommanding_Right}"/>
                 </Grid>
             </Grid>
         </Border>

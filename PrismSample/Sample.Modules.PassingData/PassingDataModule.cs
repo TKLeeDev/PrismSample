@@ -2,6 +2,7 @@
 using Prism.Modularity;
 using Prism.Regions;
 using Prism.Unity;
+using Sample.Infrastructure;
 using Sample.Modules.PassingData.Views;
 using System;
 using System.Collections.Generic;
@@ -24,17 +25,17 @@ namespace Sample.Modules.PassingData
 
         public void Initialize()
         {
-            _regionManager.RegisterViewWithRegion("DataEventAggregator_LeftRegion", typeof(EventAggregatorPublishView));
-            _regionManager.RegisterViewWithRegion("DataEventAggregator_RightRegion", typeof(EventAggregatorSubscribeView));
+            _regionManager.RegisterViewWithRegion(RegionNames.Region_EventAggregatorShell_Left, typeof(EventAggregatorPublishView));
+            _regionManager.RegisterViewWithRegion(RegionNames.Region_EventAggregatorShell_Right, typeof(EventAggregatorSubscribeView));
             _container.RegisterTypeForNavigation<EventAggregatorShellView>();
 
 
-            _regionManager.RegisterViewWithRegion("UsingEventFilter_Left", typeof(EAFilterPublishView));
-            _regionManager.RegisterViewWithRegion("UsingEventFilter_Right", typeof(EAFilterSubscribeView));
+            _regionManager.RegisterViewWithRegion(RegionNames.Region_EAFilterShell_Left, typeof(EAFilterPublishView));
+            _regionManager.RegisterViewWithRegion(RegionNames.Region_EAFilterShell_Right, typeof(EAFilterSubscribeView));
             _container.RegisterTypeForNavigation<EAFilterShellView>();
 
 
-            _regionManager.RegisterViewWithRegion("DataPassingParameters_MainRegion", typeof(PassingParametersListView));
+            _regionManager.RegisterViewWithRegion(RegionNames.Region_PassingParameters, typeof(PassingParametersListView));
             _container.RegisterTypeForNavigation<PassingParametersDetailView>();
             _container.RegisterTypeForNavigation<PassingParametersShellView>();
 

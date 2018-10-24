@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Sample.Modules.Region.Views"
              xmlns:prism="http://prismlibrary.com/"
+             xmlns:inf="clr-namespace:Sample.Infrastructure;assembly=Sample.Infrastructure"
              prism:ViewModelLocator.AutoWireViewModel="True"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
@@ -41,7 +42,7 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Button Grid.Row="0" Content="Dicovery DummyView" Command="{Binding bCommand}" Margin="2"/>
-                        <ContentControl Grid.Row="1" prism:RegionManager.RegionName="RegionViewDiscovery_MainRegion"/>
+                        <ContentControl Grid.Row="1" prism:RegionManager.RegionName="{x:Static inf:RegionNames.Region_ViewDiscovery}"/>
                     </Grid>
                 </Grid>
             </Border>

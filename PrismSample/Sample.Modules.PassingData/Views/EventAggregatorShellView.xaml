@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Sample.Modules.PassingData.Views"
+             xmlns:inf="clr-namespace:Sample.Infrastructure;assembly=Sample.Infrastructure"
              mc:Ignorable="d" 
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True"
@@ -39,8 +40,8 @@
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <ContentControl Grid.Column="0" prism:RegionManager.RegionName="DataEventAggregator_LeftRegion"/>
-                    <ContentControl Grid.Column="1" prism:RegionManager.RegionName="DataEventAggregator_RightRegion"/>
+                    <ContentControl Grid.Column="0" prism:RegionManager.RegionName="{x:Static inf:RegionNames.Region_EventAggregatorShell_Left}"/>
+                    <ContentControl Grid.Column="1" prism:RegionManager.RegionName="{x:Static inf:RegionNames.Region_EventAggregatorShell_Right}"/>
                 </Grid>
 
             </Grid>

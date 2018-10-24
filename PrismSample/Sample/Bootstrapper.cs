@@ -53,7 +53,7 @@ namespace Sample
             //Allocate region's default view.
             if (regionManager != null)
             {
-                regionManager.RegisterViewWithRegion("MainRegion", typeof(FirstView));
+                regionManager.RegisterViewWithRegion("Region_MainWindow", typeof(FirstView));
 
                 //BindingCompositeCommands
                // regionManager.RegisterViewWithRegion("BindingCompositeCommand_LeftRegion", typeof(BindingConmpositeCommand_Dummy));

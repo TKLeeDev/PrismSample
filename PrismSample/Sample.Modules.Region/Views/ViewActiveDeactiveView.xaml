@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Sample.Modules.Region.Views"
+             xmlns:inf="clr-namespace:Sample.Infrastructure;assembly=Sample.Infrastructure"
              mc:Ignorable="d" 
               xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True"
@@ -54,22 +55,22 @@
                     </Grid.RowDefinitions>
 
                     <StackPanel  VerticalAlignment="Bottom">
-                        <Button Content="Add→View1 " Command="{Binding bCommand}" CommandParameter="ViewActiveDeactive_Region1^Add"/>
-                        <Button Content="Add→View2 " Command="{Binding bCommand}" CommandParameter="ViewActiveDeactive_Region2^Add" />
+                        <Button Content="Add→View1 " Command="{Binding bCommand}" CommandParameter="Region_ViewActiveDeactive_Top^Add"/>
+                        <Button Content="Add→View2 " Command="{Binding bCommand}" CommandParameter="Region_ViewActiveDeactive_Bottom^Add" />
 
-                        <Button Content="Active→View1 " Command="{Binding bCommand}" CommandParameter="ViewActiveDeactive_Region1^Active"/>
-                        <Button Content="Active→View2 " Command="{Binding bCommand}" CommandParameter="ViewActiveDeactive_Region2^Active" />
+                        <Button Content="Active→View1 " Command="{Binding bCommand}" CommandParameter="Region_ViewActiveDeactive_Top^Active"/>
+                        <Button Content="Active→View2 " Command="{Binding bCommand}" CommandParameter="Region_ViewActiveDeactive_Bottom^Active" />
 
-                        <Button Content="Deactive→View1 " Command="{Binding bCommand}" CommandParameter="ViewActiveDeactive_Region1^Deactive"/>
-                        <Button Content="Deactive→View2 " Command="{Binding bCommand}" CommandParameter="ViewActiveDeactive_Region2^Deactive"/>
+                        <Button Content="Deactive→View1 " Command="{Binding bCommand}" CommandParameter="Region_ViewActiveDeactive_Top^Deactive"/>
+                        <Button Content="Deactive→View2 " Command="{Binding bCommand}" CommandParameter="Region_ViewActiveDeactive_Bottom^Deactive"/>
 
-                        <Button Content="Remove→View1 " Command="{Binding bCommand}" CommandParameter="ViewActiveDeactive_Region1^Remove"/>
-                        <Button Content="Remove>View2 " Command="{Binding bCommand}" CommandParameter="ViewActiveDeactive_Region2^Remove" />
+                        <Button Content="Remove→View1 " Command="{Binding bCommand}" CommandParameter="Region_ViewActiveDeactive_Top^Remove"/>
+                        <Button Content="Remove>View2 " Command="{Binding bCommand}" CommandParameter="Region_ViewActiveDeactive_Bottom^Remove" />
                     </StackPanel>
 
-                    <ContentControl Grid.Row="0" Grid.Column="1" prism:RegionManager.RegionName="ViewActiveDeactive_Region1"/>
+                    <ContentControl Grid.Row="0" Grid.Column="1" prism:RegionManager.RegionName="{x:Static inf:RegionNames.Region_ViewActiveDeactive_Top}"/>
 
-                    <ContentControl Grid.Row="1" Grid.Column="1" prism:RegionManager.RegionName="ViewActiveDeactive_Region2"/>
+                    <ContentControl Grid.Row="1" Grid.Column="1" prism:RegionManager.RegionName="{x:Static inf:RegionNames.Region_ViewActiveDeactive_Bottom}"/>
 
                 </Grid>
             </Grid>

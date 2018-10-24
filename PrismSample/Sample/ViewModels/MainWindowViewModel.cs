@@ -4,6 +4,7 @@ using Prism.Events;
 using Prism.Interactivity.InteractionRequest;
 using Prism.Mvvm;
 using Prism.Regions;
+using Sample.Infrastructure;
 using Sample.Infrastructure.Messages;
 using Sample.Modules.Popup.Models;
 
@@ -25,7 +26,7 @@ namespace Sample.ViewModels
         public InteractionRequest<ICustomNotification> CustomInteractionRequest { get; set; } = new InteractionRequest<ICustomNotification>();
 
         //Binding Windowbar Text.
-        private string _title = "Main Windows";
+        private string _title = "WPF - PRISM Sample";
         public string bTitle
         {
             get { return _title; }
@@ -49,7 +50,7 @@ namespace Sample.ViewModels
         private void NavigationCommandFunc(string viewName)
         {
             if (viewName != null)
-                _regionManager.RequestNavigate("MainRegion", viewName);
+                _regionManager.RequestNavigate(RegionNames.Region_MainWindow, viewName);
         }
         private void PopupCommandFunc(string name)
         {

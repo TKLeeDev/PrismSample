@@ -2,6 +2,7 @@
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Regions;
+using Sample.Infrastructure;
 using Sample.Modules.Region.Views;
 using System;
 using System.Collections.Generic;
@@ -46,8 +47,8 @@ namespace Sample.Modules.Region.ViewModels
             //dv1.Name = "a123";
             //dv2.Name = "a456";
 
-            _region1 = _regionManager.Regions["ViewActiveDeactive_Region1"];
-            _region2 = _regionManager.Regions["ViewActiveDeactive_Region2"];
+            _region1 = _regionManager.Regions[RegionNames.Region_ViewActiveDeactive_Top];
+            _region2 = _regionManager.Regions[RegionNames.Region_ViewActiveDeactive_Bottom];
 
             //_region1.Add(dv1);
             //_region2.Add(dv2);

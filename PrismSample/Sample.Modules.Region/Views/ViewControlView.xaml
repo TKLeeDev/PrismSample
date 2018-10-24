@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Sample.Modules.Region.Views"
+             xmlns:inf="clr-namespace:Sample.Infrastructure;assembly=Sample.Infrastructure"
              mc:Ignorable="d" 
               xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True"
@@ -41,9 +42,9 @@
                         <ColumnDefinition Width="2*"/>
                     </Grid.ColumnDefinitions>
                     <StackPanel>
-                        <Button Content="View1 (ContentControl)" Command="{Binding bCommand1}" CommandParameter="RegionControlMain_Region1^DummyView"/>
-                        <Button Content="View2 (Content Control)" Command="{Binding bCommand2}" CommandParameter="RegionControlMain_Region2^DummyView"/>
-                        <Button Content="Add View3 (ItemControl) " Command="{Binding bCommand3}" CommandParameter="RegionControlMain_Region3^DummyView"/>
+                        <Button Content="View1 (ContentControl)" Command="{Binding bCommand1}" CommandParameter="Region_ViewControl_LeftTop^DummyView"/>
+                        <Button Content="View2 (Content Control)" Command="{Binding bCommand2}" CommandParameter="Region_ViewControl_LeftBottom^DummyView"/>
+                        <Button Content="Add View3 (ItemControl) " Command="{Binding bCommand3}" CommandParameter="Region_ViewControl_RightItems^DummyView"/>
 
                         <TextBox Text="{Binding bTextBox}" Margin="0 5 0 0">
                             <!--hint text-->
@@ -70,19 +71,19 @@
                                 </Style>
                             </TextBox.Style>
                         </TextBox>
-                        <Button Content="Delete View in View3 &#10; (ItemControl) " Command="{Binding bFindDeleteCommand}" CommandParameter="RegionControlMain_Region3^DummyView"/>
+                        <Button Content="Delete View in View3 &#10; (ItemControl) " Command="{Binding bFindDeleteCommand}" CommandParameter="Region_ViewControl_RightItems^DummyView"/>
                     </StackPanel>
                     <Grid Grid.Column="1">
                         <Grid.RowDefinitions>
                             <RowDefinition/>
                             <RowDefinition/>
                         </Grid.RowDefinitions>
-                        <ContentControl prism:RegionManager.RegionName="RegionControlMain_Region1"/>
-                        <ContentControl Grid.Row="1" prism:RegionManager.RegionName="RegionControlMain_Region2"/>
+                        <ContentControl prism:RegionManager.RegionName="{x:Static inf:RegionNames.Region_ViewControl_LeftTop}"/>
+                        <ContentControl Grid.Row="1" prism:RegionManager.RegionName="{x:Static inf:RegionNames.Region_ViewControl_LeftBottom}"/>
                     </Grid>
                     <Grid Grid.Column="2">
 
-                        <ItemsControl prism:RegionManager.RegionName="RegionControlMain_Region3">
+                        <ItemsControl prism:RegionManager.RegionName="{x:Static inf:RegionNames.Region_ViewControl_RightItems}">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
                                     <Border BorderBrush="Red" BorderThickness="10" Background="LightBlue" Height="200"  Margin="2">

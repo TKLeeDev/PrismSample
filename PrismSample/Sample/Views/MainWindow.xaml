@@ -8,6 +8,7 @@
         xmlns:prism="http://prismlibrary.com/"
         xmlns:pop="clr-namespace:Sample.Modules.Popup.Views;assembly=Sample.Modules.Popup"
         prism:ViewModelLocator.AutoWireViewModel="True"
+        xmlns:inf="clr-namespace:Sample.Infrastructure;assembly=Sample.Infrastructure"
         mc:Ignorable="d"
         Title="{Binding bTitle}" Height="450" Width="820">
 
@@ -52,16 +53,16 @@
                 </MenuItem>
 
                 <MenuItem Header="Command">
-                    <MenuItem Header="Binding Command" Command="{Binding cNavigationCommand}" CommandParameter="CommandingView"/>
+                    <MenuItem Header="Commanding" Command="{Binding cNavigationCommand}" CommandParameter="CommandingView"/>
                     <MenuItem Header="Excute/CanExcute" Command="{Binding cNavigationCommand}" CommandParameter="ExcuteCanexcuteView"/>
-                    <MenuItem Header="Composite Command" Command="{Binding cNavigationCommand}" CommandParameter="CompositeCommandingView"/>
+                    <MenuItem Header="Composite Commanding" Command="{Binding cNavigationCommand}" CommandParameter="CompositeCommandingView"/>
                 </MenuItem>
 
                 <MenuItem Header="Interaction">
                     <MenuItem Header="Interactivity" Command="{Binding cNavigationCommand}" CommandParameter="interactivityView"/>
                 </MenuItem>
 
-                <MenuItem Header="Region/Views">
+                <MenuItem Header="Views(Region)">
                     <Separator/>
                     <MenuItem Header="Basic" Command="{Binding cNavigationCommand}" CommandParameter="ViewBasicView"/>
                     <MenuItem Header="Discovery" Command="{Binding cNavigationCommand}" CommandParameter="ViewDiscoveryView"/>
@@ -86,7 +87,7 @@
             </Menu>
             <Grid Grid.Row="1">
                 <ScrollViewer VerticalScrollBarVisibility="Auto" >
-                    <ContentControl Grid.Row="1" prism:RegionManager.RegionName="MainRegion"/>
+                    <ContentControl Grid.Row="1" prism:RegionManager.RegionName="{x:Static inf:RegionNames.Region_MainWindow}"/>
                 </ScrollViewer>
             </Grid>
         </Grid>

@@ -41,7 +41,7 @@ namespace Sample.Modules.Region.ViewModels
         void ExecutebCommand()
         {
             var view = _container.Resolve<DummyView>();
-            IRegion region = _regionManager.Regions["ViewInjectionMain_MainRegion"];
+            IRegion region = _regionManager.Regions["Region_ViewInjection"];
             region.Add(view);
         }
 

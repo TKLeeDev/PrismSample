@@ -101,10 +101,10 @@ namespace Sample.Modules.Region.ViewModels
             object theView = null;
             if (bTextBox == null)
             {
-                theView = _regionManager.Regions[SpliteCommandParameter(param).regionName].GetView(bTextBox);
+                MessageBox.Show("String Null");
             }
             else
-                MessageBox.Show("String Null");
+                theView = _regionManager.Regions[SpliteCommandParameter(param).regionName].GetView(bTextBox);
 
             // var theView = _regionManager.Regions[SpliteCommandParameter(param).regionName].GetView(bTextBox);
 

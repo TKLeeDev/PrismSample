@@ -1,6 +1,7 @@
 ﻿using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Regions;
+using Sample.Infrastructure;
 using Sample.Modules.Region.Views;
 using System;
 using System.Collections.Generic;
@@ -26,7 +27,7 @@ namespace Sample.Modules.Region.ViewModels
 
         void ExecutebCommand()
         {
-            _regionManager.RegisterViewWithRegion("RegionViewDiscovery_MainRegion", typeof(DummyView));
+            _regionManager.RegisterViewWithRegion(RegionNames.Region_ViewDiscovery, typeof(DummyView));
         }
 
         #region Default UI

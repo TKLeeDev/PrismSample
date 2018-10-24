@@ -26,8 +26,8 @@ namespace Sample.Modules.Command
         public void Initialize()
         {
 
-            _regionManager.RegisterViewWithRegion("BindingCompositeCommand_LeftRegion", typeof(CompositeCommandingDummyView));
-            _regionManager.RegisterViewWithRegion("BindingCompositeCommand_RightRegion", typeof(CompositeCommandingDummyView));
+            _regionManager.RegisterViewWithRegion(RegionNames.Region_CompositeCommanding_Left, typeof(CompositeCommandingDummyView));
+            _regionManager.RegisterViewWithRegion(RegionNames.Region_CompositeCommanding_Right, typeof(CompositeCommandingDummyView));
 
 
             //BindingCompositeCommands
