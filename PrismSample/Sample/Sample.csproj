@@ -161,7 +161,7 @@
       <Project>{a219df0a-945b-455b-a9a6-4f203a70f1a3}</Project>
       <Name>Sample.Modules.Popup</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Sample.Modules.Region\Sample.Modules.Views.csproj">
+    <ProjectReference Include="..\Sample.Modules.Views\Sample.Modules.Views.csproj">
       <Project>{f340cf4c-fdda-43c9-bec9-43d3de0106b9}</Project>
       <Name>Sample.Modules.Views</Name>
     </ProjectReference>

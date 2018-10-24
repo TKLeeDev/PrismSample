@@ -1,4 +1,0 @@
-
-1. Firstpage 맵핑.
-
-2. region static 만들기 및 region명 View에 맞게 수정.

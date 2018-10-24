@@ -19,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.Modules.Interaction"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.Modules.Popup", "Sample.Modules.Popup\Sample.Modules.Popup.csproj", "{A219DF0A-945B-455B-A9A6-4F203A70F1A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.Modules.Views", "Sample.Modules.Region\Sample.Modules.Views.csproj", "{F340CF4C-FDDA-43C9-BEC9-43D3DE0106B9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.Modules.Views", "Sample.Modules.Views\Sample.Modules.Views.csproj", "{F340CF4C-FDDA-43C9-BEC9-43D3DE0106B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
