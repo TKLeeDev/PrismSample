@@ -91,7 +91,7 @@
 
                         </StackPanel>
                     </GroupBox>
-                    <GroupBox Header="Region/Views">
+                    <GroupBox Header="Views(Region)">
                         <StackPanel>
                             <Button Content="Basic" Command="{Binding cNavigationCommand}" CommandParameter="ViewBasicView"/>
                             <Button Content="Discovery" Command="{Binding cNavigationCommand}" CommandParameter="ViewDiscoveryView"/>
